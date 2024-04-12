@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
 
     public bool ground = true;
+    private bool dbl = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,12 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             ground = false;
         }
+        else if (Input.GetKeyDown(KeyCode.Space) && dbl)
+        {
+            playerRb.velocity = new(0,0,0);
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            dbl = false;
+        }
 
 
     }
@@ -31,5 +38,6 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ground = true;
+        dbl = true;
     }
 }
