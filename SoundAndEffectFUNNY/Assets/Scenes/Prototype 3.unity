@@ -613,6 +613,9 @@ MonoBehaviour:
   - {fileID: 4712742679828215703, guid: 5de60244ff5af784fb4c0358da14877f, type: 3}
   - {fileID: 4712742679828215703, guid: 39fdf0bb1c390154ca30a44c18aac350, type: 3}
   - {fileID: 4712742679828215703, guid: ddab050e62c85524cadf9aa82d27e431, type: 3}
+  obstaclesMega:
+  - {fileID: 4712742679828215703, guid: df633a2dba3692644998d3d9daf651ff, type: 3}
+  megacap: 2
 --- !u!4 &1401689463
 Transform:
   m_ObjectHideFlags: 0
