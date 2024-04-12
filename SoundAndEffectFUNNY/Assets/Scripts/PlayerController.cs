@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public bool ground = true;
     private bool dbl = true;
+
     // Start is called before the first frame update
     void Start()
     {

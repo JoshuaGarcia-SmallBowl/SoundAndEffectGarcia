@@ -5,6 +5,7 @@ using UnityEngine;
 public class move : MonoBehaviour
 {
     private float speed = 5;
+    public bool despawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +16,12 @@ public class move : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * Time.deltaTime * speed);
+        if (despawn)
+        {
+            if (transform.position.x < -20)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }

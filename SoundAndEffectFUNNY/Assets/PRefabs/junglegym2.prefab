@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7793962481125106494}
   - component: {fileID: 5757854064588413046}
   - component: {fileID: 5575543707651253047}
-  - component: {fileID: 2548572759152374302}
   m_Layer: 0
   m_Name: JungleGymPart (2)
   m_TagString: Untagged
@@ -134,18 +133,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2548572759152374302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108917956068322206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7185427b6d108c248a063734a28293b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4712742679828215703
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5222450862125714981}
+  - component: {fileID: 1460049987030701384}
   m_Layer: 0
   m_Name: junglegym2
   m_TagString: Untagged
@@ -180,6 +168,19 @@ Transform:
   - {fileID: 5753336685734187861}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1460049987030701384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712742679828215703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7185427b6d108c248a063734a28293b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawn: 1
 --- !u!1 &5956595318169231404
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +194,6 @@ GameObject:
   - component: {fileID: 7060488248685544063}
   - component: {fileID: 6520827144060705809}
   - component: {fileID: 2672496069665364195}
-  - component: {fileID: 4563307603717629433}
   m_Layer: 0
   m_Name: JungleGymPart (1)
   m_TagString: Untagged
@@ -314,18 +314,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4563307603717629433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5956595318169231404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7185427b6d108c248a063734a28293b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6071469231316955913
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +327,6 @@ GameObject:
   - component: {fileID: 4258192730944617049}
   - component: {fileID: 535468145086798242}
   - component: {fileID: 1878128476667828879}
-  - component: {fileID: 7143976644969674663}
   m_Layer: 0
   m_Name: JungleGymPart
   m_TagString: Untagged
@@ -460,15 +447,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7143976644969674663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6071469231316955913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7185427b6d108c248a063734a28293b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
