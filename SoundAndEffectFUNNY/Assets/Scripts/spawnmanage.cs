@@ -31,12 +31,12 @@ public class spawnmanage : MonoBehaviour
     {
         if (on)
         {
-            mega = Random.Range(0, megacap);
-            if (mega == 0) 
+            mega = Random.Range(1, megacap);
+            if (mega == 1) 
             {
-                 int meg = Random.Range(0, obstaclesMega.Length);
+                int meg = Random.Range(0, obstaclesMega.Length);
                 Instantiate(obstaclesMega[meg], new(30, 3.5f, -2), obstaclesMega[meg].transform.rotation);
-                megacap = 20;
+                megacap = Random.Range(15, 20);
                 count = 2;
                 on = false;
             }
@@ -54,6 +54,7 @@ public class spawnmanage : MonoBehaviour
                     goog = new(Random.Range(26, 30), 0, 0);
                 }
                 Instantiate(obstacles[funny], goog, obstacles[funny].transform.rotation);
+                megacap--;
             }
            
         }

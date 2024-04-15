@@ -18,7 +18,7 @@ public class move : MonoBehaviour
         transform.Translate(Vector3.left * Time.deltaTime * speed);
         if (despawn)
         {
-            if (transform.position.x < -20)
+            if (transform.position.x < -33)
             {
                 Destroy(gameObject);
             }
