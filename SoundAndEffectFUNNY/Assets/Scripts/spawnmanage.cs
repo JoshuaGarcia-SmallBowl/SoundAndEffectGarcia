@@ -15,10 +15,12 @@ public class spawnmanage : MonoBehaviour
     private int count = 0;
     private int mega;
     public int megacap = 20;
+    private PlayerController over;
     // Start is called before the first frame update
     void Start()
     {
         InvokeRepeating("Spawn", startDelay, repeatRate);
+        over = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -29,43 +31,47 @@ public class spawnmanage : MonoBehaviour
 
     void Spawn()
     {
-        if (on)
+        if (over.gameOver == false)
         {
-            mega = Random.Range(1, megacap);
-            if (mega == 1) 
+            if (on)
             {
-                int meg = Random.Range(0, obstaclesMega.Length);
-                Instantiate(obstaclesMega[meg], new(30, 3.5f, -2), obstaclesMega[meg].transform.rotation);
-                megacap = Random.Range(15, 20);
-                count = 2;
-                on = false;
-            }
-            else
-            {
-                int funny = Random.Range(0, obstacles.Length);
-                if (funny >= 3)
+                mega = Random.Range(1, megacap);
+                if (mega == 1)
                 {
-                    goog = new(Random.Range(28, 32), 3.5f, -2);
+                    int meg = Random.Range(0, obstaclesMega.Length);
+                    Instantiate(obstaclesMega[meg], new(30, 3.5f, -2), obstaclesMega[meg].transform.rotation);
+                    megacap = Random.Range(15, 20);
+                    count = 2;
                     on = false;
-                    count++;
                 }
                 else
                 {
-                    goog = new(Random.Range(26, 30), 0, 0);
+                    int funny = Random.Range(0, obstacles.Length);
+                    if (funny >= 3)
+                    {
+                        goog = new(Random.Range(28, 32), 3.5f, -2);
+                        on = false;
+                        count++;
+                    }
+                    else
+                    {
+                        goog = new(Random.Range(26, 30), 0, 0);
+                    }
+                    Instantiate(obstacles[funny], goog, obstacles[funny].transform.rotation);
+                    megacap--;
                 }
-                Instantiate(obstacles[funny], goog, obstacles[funny].transform.rotation);
-                megacap--;
+
             }
-           
-        }
-        else
-        {
-            count--;
-            if (count == 0)
+            else
             {
-                on = true; 
+                count--;
+                if (count == 0)
+                {
+                    on = true;
+                }
             }
+
         }
-       
     }
+         
 }

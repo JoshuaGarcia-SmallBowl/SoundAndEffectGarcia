@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public bool ground = true;
     private bool dbl = true;
+    public bool gameOver = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             ground = false;
+            
+            dbl = true;
         }
         else if (Input.GetKeyDown(KeyCode.Space) && dbl)
         {
@@ -38,7 +42,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        ground = true;
-        dbl = true;
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+
+            gameOver = true;
+
+        }
+        else
+        {
+            
+            ground = true;
+ 
+        }
+ 
+    
     }
+  
 }
