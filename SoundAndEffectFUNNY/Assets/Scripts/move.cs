@@ -18,7 +18,15 @@ public class move : MonoBehaviour
     {
         if (over.gameOver == false)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            if (over.dsp)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * speed * 2);
+            }
+            else
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * speed);
+            }
+            
         }
         
         if (despawn)
