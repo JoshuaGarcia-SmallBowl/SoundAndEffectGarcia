@@ -47,7 +47,7 @@ public class spawnmanage : MonoBehaviour
                 else
                 {
                     int funny = Random.Range(0, obstacles.Length);
-                    if (funny >= 3)
+                    if (funny >= 4)
                     {
                         goog = new(Random.Range(28, 32), 3.5f, -2);
                         on = false;

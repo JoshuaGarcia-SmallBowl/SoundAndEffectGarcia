@@ -779,15 +779,18 @@ MonoBehaviour:
   - {fileID: 7245946355557558092, guid: 79cdd4e58d4c36f42b403cdb122658b9, type: 3}
   - {fileID: 6867301560384690847, guid: 1d2eb6d8c47888145b3e332a420a716a, type: 3}
   - {fileID: 3381058358031554408, guid: e8c26683184555045a4fac7d4f7e72fb, type: 3}
-  - {fileID: 4712742679828215703, guid: f2e4c732bc67da44e9bc6cef0410ab52, type: 3}
+  - {fileID: 9011269747252919303, guid: 5a6ff31e702924841b5afdd4bf1bade1, type: 3}
   - {fileID: 4712742679828215703, guid: 5de60244ff5af784fb4c0358da14877f, type: 3}
   - {fileID: 4712742679828215703, guid: 39fdf0bb1c390154ca30a44c18aac350, type: 3}
   - {fileID: 4712742679828215703, guid: ddab050e62c85524cadf9aa82d27e431, type: 3}
   - {fileID: 4712742679828215703, guid: c198d490767852f4d9e3324ec8067627, type: 3}
+  - {fileID: 4712742679828215703, guid: f2e4c732bc67da44e9bc6cef0410ab52, type: 3}
+  - {fileID: 4712742679828215703, guid: f56d07333db4dc540b551eed172e08f6, type: 3}
   obstaclesMega:
   - {fileID: 4712742679828215703, guid: df633a2dba3692644998d3d9daf651ff, type: 3}
   - {fileID: 4712742679828215703, guid: a0cd3074b9ba0ac4f991ec2d829bc2cb, type: 3}
-  megacap: 20
+  - {fileID: 4712742679828215703, guid: 6f805057b5c1b6d468f3ade63cf36b10, type: 3}
+  megacap: 1
 --- !u!4 &1401689463
 Transform:
   m_ObjectHideFlags: 0
