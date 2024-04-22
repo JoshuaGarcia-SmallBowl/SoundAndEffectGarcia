@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
             ground = false;
             
             dbl = true;
+            triple = true;
             dirt.Stop();
 
             if (guy)
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
             }
            
         }
-        if (!ground && !gameOver && triple)
+        if (!gameOver && triple)
         {
             if (downP)
             {
