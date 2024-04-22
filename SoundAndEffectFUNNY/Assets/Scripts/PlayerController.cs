@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public bool ground = true;
     private bool dbl = true;
+    private bool triple = true;
     public bool gameOver = false;
     private Animator playerAnim;
     public bool guy;
@@ -20,6 +21,15 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip jumpSound;
     public bool dsp;
+    private bool invinc;
+
+    //Class parameters
+    public bool dashP;
+    public bool doubleP;
+    public bool tripleP;
+    public bool downP;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,38 +60,66 @@ public class PlayerController : MonoBehaviour
             }
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && dbl)
+        else if (Input.GetKeyDown(KeyCode.Space) && dbl && doubleP)
         {
             playerRb.velocity = new(0,0,0);
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             dbl = false;
+            triple = true;
             playerAudio.PlayOneShot(jumpSound, 1.0f);
             if (guy)
             {
                 playerAnim.SetTrigger("Jump_trig");
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Space) && triple && tripleP)
+        {
+            playerRb.velocity = new(0, 0, 0);
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            triple = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
+            
+        }
 
         if (ground && !gameOver)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (dashP)
             {
-                dsp = true;
-                playerAnim.SetFloat("Speed_f", 1.0f);
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    dsp = true;
+                    playerAnim.SetFloat("Speed_f", 1.0f);
+                }
+                else if (dsp)
+                {
+                    dsp = false;
+                    playerAnim.SetFloat("Speed_f", 0.5f);
+                }
             }
-            else if (dsp)
-            {
-                dsp = false;
-                playerAnim.SetFloat("Speed_f", 0.5f);
-            }
+           
         }
-       
+        if (!ground && !gameOver && triple)
+        {
+            if (downP)
+            {
+                if (Input.GetKey(KeyCode.S))
+                {
+                    playerRb.velocity = new(0, 0, 0);
+                    playerRb.AddForce(Vector3.down * jumpForce, ForceMode.Impulse);
+                    invinc = true;
+                    
+
+                }
+
+            }
+
+        }
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("obstacle"))
+        if (collision.gameObject.CompareTag("obstacle") && !invinc)
         {
             dirt.Stop(true);
             gameOver = true;
@@ -105,6 +143,8 @@ public class PlayerController : MonoBehaviour
         {
             dirt.Play();
             ground = true;
+            invinc = false;
+            
  
         }
  
